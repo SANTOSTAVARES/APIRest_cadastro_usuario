@@ -8,9 +8,7 @@ EXPIRES_IN_MIN = 60
 def criar_access_token(data: dict):
     dados = data.copy()
     expiracao = datetime.utcnow() + timedelta(minutes=EXPIRES_IN_MIN)
-
     dados.update({'exp': expiracao})
-
     token_jwt = jwt.encode(dados, SECRET_KEY, algorithm=ALGORITHM)
     return token_jwt
 
