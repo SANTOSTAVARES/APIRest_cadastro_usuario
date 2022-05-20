@@ -1,0 +1,11 @@
+from sqlalchemy import Column, Integer, String
+
+from .database import Base
+
+class Usuario(Base):
+    __tablename__ = "cadostro_usuario"
+
+    id = Column(Integer, primary_key=True, index=True)
+    nome = Column(String)
+    cpf = Column(String, unique=True, index=True)
+    senha = Column(String)
