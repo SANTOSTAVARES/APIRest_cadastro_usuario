@@ -1,0 +1,6 @@
+- [x] Corrigir o PIP list que está no readme.md
+- [X] Criar as rotas
+- [X] Melhorar arquitetura dos arquivos
+- [ ] 
+- [ ] 
+- [ ] 

@@ -23,11 +23,7 @@ class LoginData(BaseModel):
     senha: str
     class Config:
         orm_mode = True
-""" 
-class LoginSucesso(BaseModel):
-    usuario: UsuarioSimples
-    access_token: str
-     """
+
 class LoginSucesso(BaseModel):
     pessoa: UsuarioSimples
     access_token: str

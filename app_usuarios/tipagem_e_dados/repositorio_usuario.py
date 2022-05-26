@@ -7,11 +7,12 @@ from jose import JWTError
 from fastapi.security import OAuth2PasswordBearer
 
 from . import models, repositorio_usuario
-from .providers import token_provider
+from app_usuarios.providers import token_provider
+from .conexao_db import get_db
 
-from .database import SessionLocal, engine
-models.Base.metadata.create_all(bind=engine)
-
+#from .database import SessionLocal, engine
+#models.Base.metadata.create_all(bind=engine)
+""" 
 # Dependency
 def get_db():
     db = SessionLocal()
@@ -19,7 +20,7 @@ def get_db():
         yield db
     finally:
         db.close()
-
+ """
 oauth2_schema = OAuth2PasswordBearer(tokenUrl='token')
 
 class DadosUsuario():
