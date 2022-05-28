@@ -10,17 +10,7 @@ from . import models, repositorio_usuario
 from app_usuarios.providers import token_provider
 from .conexao_db import get_db
 
-#from .database import SessionLocal, engine
-#models.Base.metadata.create_all(bind=engine)
-""" 
-# Dependency
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
- """
+
 oauth2_schema = OAuth2PasswordBearer(tokenUrl='token')
 
 class DadosUsuario():

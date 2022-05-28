@@ -1,7 +1,10 @@
 from fastapi import FastAPI
+import app_usuarios
 
 from app_usuarios.rotas import usuario_router, login_router, token_router
+from app_usuarios.tipagem_e_dados.database import engine, Base
 
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title='API para manutenção de dados de usuário', 
                 version='0.1', 

@@ -1,6 +1,4 @@
-from fastapi import APIRouter, Response
-
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, APIRouter, Response
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -12,7 +10,7 @@ from app_usuarios.tipagem_e_dados.conexao_db import get_db
 router = APIRouter()
 
 
-@router.post("/usuarios/", response_model=schemas.UsuarioBase)
+@router.post("/usuarios/", response_model=schemas.UsuarioSimples)
 def post_usuario(usuario_novo: schemas.UsuarioBase, db: Session = Depends(get_db)):
     evitar_duplicidade = crud.get_usuario_by_cpf(db, cpf_registrado=usuario_novo.cpf)
     if evitar_duplicidade:
