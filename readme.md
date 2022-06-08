@@ -12,13 +12,14 @@ Disponibilizar API Rest para cadastro de usuários.
 
 ### Ativação da API Rest
 Deve ser ativado o servidor no terminal, por meio do seguinte comando:
+    
     uvicorn app_usuarios.main:app --reload
 
 #### Parâmetro da ativação da API Rest
-    uvicor: servidor
-    app_usuarios.main: arquivo a ser executado
-    app: a função a ser executada do arquivo main.py
-    --reload: monitora as alterações nos arquivos, para que o programa sempre utilize a última versão disponível.
+uvicor: servidor
+app_usuarios.main: arquivo a ser executado
+app: a função a ser executada do arquivo main.py
+--reload: monitora as alterações nos arquivos, para que o programa sempre utilize a última versão disponível.
 
 Após isso será criado o arquivo 'sql_app.db' que, é a base de dados em que poderá ser realizado os métodos GET, PUT, POST e DELETE sobre os dados de usuário.
 
@@ -33,12 +34,15 @@ Para realizar um signup de usuário, salvando-o no banco de dados, deve ser util
 URL: http://127.0.0.1:8000/usuarios
 Método: Post
 Exemplo de conteúdo Json:
+
     {
         "nome": "Heloisa",
         "cpf": "09078702601",
         "senha": "Admin123"
         }
+
 Exemplo de resposta ao cliente:
+    
     {
         "id": 1,
         "nome": "Heloisa",
@@ -63,6 +67,7 @@ Para alterar o registro de um usuário específico na base de dados, o número r
 URL: http://127.0.0.1:8000/usuarios/1
 Método: Put
 Exemplo de conteúdo Json:
+
     {
         "nome": "Heloisa Matarazzo",
         "cpf": "09078702601",
@@ -73,12 +78,16 @@ Exemplo de conteúdo Json:
 Para autenticar o registro de usuário na realização de login, deve ser seguido os parâmetros abaixo.
 URL: http://127.0.0.1:8000/login
 Método: Post
+
 Exemplo de conteúdo Json:
+
     {
     "cpf": "09078702603",
         "senha": "1234"
     }
+
 Exemplo de resposta ao cliente:
+
     {
     "pessoa": {
         "id": 3,
@@ -93,4 +102,5 @@ Para validar se o token é valido, deve ser seguido o exemplo de parâmetros aba
 Método: Get
 URL: http://127.0.0.1:8000/me
 Exemplo de envio de Token
+
     Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwOTA3ODcwMjYwMyIsImV4cCI6MTY1NDIxMjcxM30.OaHXGMxHsqFxW02opMbqyJyBqTrtU2Rk9HS2l-QmVNw
